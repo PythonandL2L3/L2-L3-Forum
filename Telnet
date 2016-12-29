@@ -1,0 +1,22 @@
+###This tells how to telnet.
+  **Firstly create an virtual interface if it is ubuntu laptop. 
+  Steps to create virtual interface...
+       1.open the terminal.
+       2.Enter the following commands...
+                 sudo tunctl -u <login account>
+                 sudo tunctl -u <1000>
+                 sudo ifconfig tap1 <your own ip address> netmask <your own mask address> up
+       After this enter the 'ifconfig' & check whether tap1 came or not.
+       
+       Next Put a cloud in gns3 set up & configure tap1 interface.That's it. After this configure telnet in router...steps are as follows..
+         
+         Go to conf mode & enter the commands 
+                  1.username <your name> password <your password>
+                  2.line vty 0 4
+                  3.login local
+                  4.exit
+                  5.enable secret <your password>
+                  
+       That's all, now we can telnet from both sides ie., router to cloud & via.
+  ** If you are using Windows, install loopback adaptor.
+     And give ip address, subnet mask & default gatewy. Then telnet.
